@@ -28,10 +28,14 @@ def calc():
 
 def clear():
     global show
-    global lista
-    lista = []
-    show = "0"
-    total.set(show)
+    show = str()
+    try:
+        lista.pop()
+        for x in lista:
+            show += str(x)
+        total.set(show)
+    except IndexError:
+        total.set("Error")
 
 #------------------------------------------
 # configuração de widgets
