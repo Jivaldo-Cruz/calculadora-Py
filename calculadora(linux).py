@@ -26,6 +26,14 @@ def calc():
         x =  x.replace(char, "")
     total.set(eval(x))
 
+def clear_total():
+    global show
+    global lista
+    lista = []
+    show = "0"
+    total.set(show)
+
+
 def clear():
     global show
     show = str()
@@ -36,6 +44,20 @@ def clear():
         total.set(show)
     except IndexError:
         total.set("Error")
+
+def exit_dvez():
+    return exit()
+
+
+#------------------------------------------
+# menu
+menu_ = Menu(root)
+
+menu_.add_command(label = "Clear", command = lambda: clear_total())
+menu_.add_command(label = "Fechar", command = lambda: exit_dvez())
+
+root.config(menu = menu_)
+
 
 #------------------------------------------
 # configuração de widgets
