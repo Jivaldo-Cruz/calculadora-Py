@@ -46,7 +46,7 @@ def clear():
         total.set("Error")
 
 def exit_dvez():
-    return exit()
+    root.destroy()
 
 
 #------------------------------------------
